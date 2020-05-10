@@ -4,8 +4,8 @@ import { Input } from "react-native-elements";
 
 export class WeatherForm extends Component {
   state = {
-    city: "City",
-    country: "Country ",
+    city: "Manchester",
+    country: "UK",
   };
 
   onChangeCountry = (event) => {
@@ -15,14 +15,9 @@ export class WeatherForm extends Component {
     this.setState({ city: event.text });
   };
   handleSubmit = () => {
-    console.log(this.state.city, "Luisa");
     event.preventDefault();
-    this.setState({ city: "City", country: "Country" });
+    this.setState({ city: "Manchester", country: "UK" });
   };
-  // componentDidUpdate(prevProps, prevState) {
-  //   console.log(prevState, "testLuisa");
-  //   // this.setState({ city: " City", country: "Country" });
-  // }
 
   render() {
     const { city, country } = this.state;
@@ -31,18 +26,19 @@ export class WeatherForm extends Component {
     return (
       <View>
         <TextInput
-          placeholder={city || "city"}
           onChangeText={() => {
             this.onChangeCity(event);
           }}
-          // value={city}
+          placeholder="Type a city ..."
+          value={city}
         />
+
         <TextInput
-          placeholder={country}
-          value={country}
           onChange={() => {
             this.onChangeCountry(event);
           }}
+          placeholder="Type a country ..."
+          value={country}
         />
         <Button
           title="View"

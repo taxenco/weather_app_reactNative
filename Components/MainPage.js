@@ -4,28 +4,29 @@ import HeaderTop from "./HeaderTop";
 import WeatherPic from "./WeatherPic";
 import WeatherForm from "./WeatherForm";
 import ShowWeather from "./ShowWeather";
+import Carousel from "./Carousel"
 import * as api from "../api";
 
 export class MainPage extends Component {
   state = {
-    weather: "",
+    weather: null,
   };
 
   fetchWeather = (city, country) => {
     api.getWeather(city, country).then((response) => {
-      console.log("response", response);
-      // fetchWeather(city, country, weather)
+      this.setState({ weather: response });
     });
-    //  this.setState({city, country, weather})
   };
 
   render() {
+    const { weather } = this.state;
     return (
       <View>
         <HeaderTop />
-        <WeatherPic />
+        <WeatherPic weather={weather} />
         <WeatherForm fetchWeather={this.fetchWeather} />
-        <ShowWeather />
+        <ShowWeather weather={weather} />
+        <Carousel/>
       </View>
     );
   }

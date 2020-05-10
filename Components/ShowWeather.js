@@ -1,13 +1,22 @@
 import React from "react";
 import { Text, View } from "react-native";
-export default function ShowWeather() {
-  return (
+export default function ShowWeather({ weather }) {
+  if (weather !== null) {
+    console.log(weather.name);
+  }
+  return weather !== null ? (
     <View>
-      <Text>hola</Text>
-      <Text>hola2</Text>
-      <Text>hola3</Text>
+      <Text>
+        Location:{weather.name}, {weather.sys.country}
+      </Text>
+      <Text>Description:{weather.weather[0].description}</Text>
+      <Text>Temperature:{weather.main.temp}</Text>
+      <Text>Wind speed:{weather.wind.speed}</Text>
     </View>
+  ) : (
+    <Text>
+      Weather app allows you to display weather information based on any
+      location by default is Manchester.{" "}
+    </Text>
   );
 }
-
-
