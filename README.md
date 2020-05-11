@@ -6,7 +6,7 @@ NC News Front-End:
 
 - Github Link: https://github.com/taxenco/weather_app_reactNative
 
-<img src="./picture/weatherApp.jpeg" alt="Weather app"/>
+<img src="./picture/weather_App.jpeg" alt="Weather app"/>
 
 ## Dependencies:
 
