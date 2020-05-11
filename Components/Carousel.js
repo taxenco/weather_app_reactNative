@@ -1,15 +1,9 @@
 import React, { Component } from "react";
-import {
-  Text,
-  View,
-  ScrollView,
-  Dimensions,
-  StyleSheet,
-} from "react-native";
+import { Text, View, ScrollView, Dimensions, StyleSheet } from "react-native";
+import Spinner from "react-native-loading-spinner-overlay";
 
 import CardDefaultWeather from "./CardData";
 import * as api from "../api";
-
 
 const { width } = Dimensions.get("window");
 
@@ -21,7 +15,6 @@ export class Carousel extends Component {
       { tokio: null },
       { london: null },
     ],
-    isLoading: true,
     active: 0,
   };
 
@@ -80,7 +73,12 @@ export class Carousel extends Component {
       data[3].london !== null ? (
       <View>
         <View>
-          <ScrollView pagingEnabled horizontal onScroll={this.change} style={style.scroll}>
+          <ScrollView
+            pagingEnabled
+            horizontal
+            onScroll={this.change}
+            style={style.scroll}
+          >
             {data.map((city, i) => {
               return (
                 <View style={style.card}>
@@ -108,7 +106,7 @@ export class Carousel extends Component {
         </View>
       </View>
     ) : (
-      <Text>Looser</Text>
+      <Spinner textContent={"Loading..."} />
     );
   }
 }
