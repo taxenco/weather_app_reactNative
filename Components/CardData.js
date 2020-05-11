@@ -1,12 +1,11 @@
 import * as React from "react";
-import { Header, Card, Image } from "react-native-elements";
+import { Card, Image } from "react-native-elements";
 
-import { Text, View, StyleSheet, Button } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 
 export default function CardDefaultWeather({ city, i }) {
   const cities = Object.getOwnPropertyNames(city);
   const { name, weather, main, wind } = city[cities];
-  console.log(weather[0].icon);
   return (
     <View>
       <Card>

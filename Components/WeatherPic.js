@@ -1,10 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { Image } from "react-native-elements";
-import image from "/home/carlos/Desktop/NorthCoders/WeatherApp/weatherApp/Pictures/Sun.jpg";
 export default function WeatherPic({ weather }) {
-  if (weather !== null) {
-    console.log(weather.weather[0].icon);
-  }
+ 
   return weather !== null ? (
     <Image
       source={{

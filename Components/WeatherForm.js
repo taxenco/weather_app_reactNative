@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button, View, TextInput } from "react-native";
-import { Input } from "react-native-elements";
 
 export class WeatherForm extends Component {
   state = {

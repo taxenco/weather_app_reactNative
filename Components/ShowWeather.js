@@ -1,9 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 export default function ShowWeather({ weather }) {
-  if (weather !== null) {
-    console.log(weather.name);
-  }
+ 
   return weather !== null ? (
     <View>
       <Text>

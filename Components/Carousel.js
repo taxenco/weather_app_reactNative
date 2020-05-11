@@ -2,21 +2,16 @@ import React, { Component } from "react";
 import {
   Text,
   View,
-  Image,
   ScrollView,
   Dimensions,
-  Icon,
   StyleSheet,
 } from "react-native";
-import { Card } from "react-native-elements";
 
 import CardDefaultWeather from "./CardData";
 import * as api from "../api";
 
-const images = [{ text: "All Events" }, { text: "Create Event" }];
 
 const { width } = Dimensions.get("window");
-const height = width * 0.9; //90%
 
 export class Carousel extends Component {
   state = {
@@ -137,5 +132,4 @@ const style = StyleSheet.create({
     bottom: 0,
     alignSelf: "center",
   },
-  // card: { width, height },
 });
