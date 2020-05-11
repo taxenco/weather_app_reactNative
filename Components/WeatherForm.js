@@ -13,7 +13,7 @@ export class WeatherForm extends Component {
   onChangeCity = (event) => {
     this.setState({ city: event.text });
   };
-  handleSubmit = () => {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ city: "Manchester", country: "UK" });
   };
@@ -24,27 +24,29 @@ export class WeatherForm extends Component {
 
     return (
       <View>
-        <TextInput
-          onChangeText={() => {
-            this.onChangeCity(event);
-          }}
-          placeholder="Type a city ..."
-          value={city}
-          style={style.topText}
-        />
-        <TextInput
-          onChange={() => {
-            this.onChangeCountry(event);
-          }}
-          placeholder="Type a country ..."
-          value={country}
-          style={style.bottomText}
-        />
-        <View style={[{ width: "50%", marginLeft: 95,  }]}>
+        <View style={style.margin}>
+          <TextInput
+            onChangeText={(event) => {
+              this.onChangeCity(event);
+            }}
+            placeholder="Type a city ..."
+            value={city}
+            style={style.topText}
+          />
+          <TextInput
+            onChange={(event) => {
+              this.onChangeCountry(event);
+            }}
+            placeholder="Type a country ..."
+            value={country}
+            style={style.bottomText}
+          />
+        </View>
+        <View style={[{ width: "50%", marginLeft: 95 }]}>
           <Button
             title="View"
             type="submit"
-            onPress={() => {
+            onPress={(event) => {
               fetchWeather(city, country);
               this.handleSubmit(event);
             }}
@@ -59,27 +61,23 @@ export class WeatherForm extends Component {
 export default WeatherForm;
 const style = StyleSheet.create({
   topText: {
-    marginTop: 30,
-    color: "black",
-    fontSize: 20,
+    borderColor: "gray",
+    alignContent: "center",
+    marginTop: 20,
     textAlign: "center",
     backgroundColor: "#f0efef",
-    borderColor: "black",
     width: 300,
-    marginRight: 40,
-    marginLeft: 40,
-    flex: 1,
+    height: 30,
   },
   bottomText: {
-    marginBottom: 20,
+    borderColor: "gray",
+    alignContent: "center",
+    marginBottom: 10,
     marginTop: 10,
-    color: "Black",
-    fontSize: 20,
+    height: 30,
     textAlign: "center",
     backgroundColor: "#f0efef",
     width: 300,
-    marginRight: 40,
-    marginLeft: 40,
-    flex: 1,
   },
+  margin: { marginBottom: 3, alignItems: "center"},
 });

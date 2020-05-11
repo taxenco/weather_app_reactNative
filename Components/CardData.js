@@ -39,11 +39,11 @@ export default function CardDefaultWeather({ city, i }) {
 }
 
 const style = StyleSheet.create({
-  image: { width: 40, height: 70, marginBottom: 5 },
+  image: { width: "90%", height: 70, marginBottom: 0 },
   view: { textAlign: "center" },
-  text1: { marginTop: 10, marginLeft: 10 },
-  text2: { marginTop: 10, marginLeft: 10 },
-  text3: { marginTop: 10, marginLeft: 10 },
-  text4: { marginTop: 10, marginLeft: 10 },
-  textView: { marginTop: 5 },
+  text1: { marginTop: 5, marginLeft: 10 },
+  text2: { marginTop: 5, marginLeft: 10 },
+  text3: { marginTop: 5, marginLeft: 10 },
+  text4: { marginTop: 5, marginLeft: 10 },
+  textView: { marginTop: 0 },
 });

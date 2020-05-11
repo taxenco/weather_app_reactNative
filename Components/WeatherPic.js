@@ -7,7 +7,7 @@ export default function WeatherPic({ weather }) {
       source={{
         uri: `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`,
       }}
-      style={{ width: '100%', height: 200 }}
+      style={{ width: '100%', height: 150 }}
     />
   ) : (
     <Image
@@ -15,7 +15,7 @@ export default function WeatherPic({ weather }) {
         uri:
           "https://wi-images.condecdn.net/image/doEYpG6Xd87/crop/2040/f/weather.jpg",
       }}
-      style={{ width: '100%', height: 200 }}
+      style={{ width: '100%', height: 150 }}
     />
   );
 }

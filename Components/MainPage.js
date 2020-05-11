@@ -4,7 +4,7 @@ import HeaderTop from "./HeaderTop";
 import WeatherPic from "./WeatherPic";
 import WeatherForm from "./WeatherForm";
 import ShowWeather from "./ShowWeather";
-import Carousel from "./Carousel"
+import Carousel from "./Carousel";
 import * as api from "../api";
 
 export class MainPage extends Component {
@@ -24,9 +24,13 @@ export class MainPage extends Component {
       <View>
         <HeaderTop />
         <WeatherPic weather={weather} />
-        <WeatherForm fetchWeather={this.fetchWeather} />
-        <ShowWeather weather={weather} />
-        <Carousel/>
+        <View>
+          <WeatherForm fetchWeather={this.fetchWeather} />
+        </View>
+        <View>
+          <ShowWeather weather={weather} />
+        </View>
+        <Carousel />
       </View>
     );
   }
