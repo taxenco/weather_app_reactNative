@@ -106,7 +106,9 @@ export class Carousel extends Component {
         </View>
       </View>
     ) : (
-      <Spinner textContent={"Loading..."} />
+      <View style={style.loading}>
+        <Spinner textContent={"Loading..."} />
+      </View>
     );
   }
 }
@@ -121,13 +123,16 @@ const style = StyleSheet.create({
     marginRight: 0,
     marginHorizontal: 0,
   },
-  card: { width },
-  paginText: { color: "#888", margin: 3 },
-  paginActiveText: { color: "white", margin: 3 },
+  card: { width: 250 },
+  paginText: { color: "#888" },
+  paginActiveText: { color: "white" },
   pagination: {
     flexDirection: "row",
     position: "absolute",
     bottom: 0,
     alignSelf: "center",
+  },
+  loading: {
+    marginLeft: 190,
   },
 });

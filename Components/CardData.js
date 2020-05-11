@@ -9,22 +9,41 @@ export default function CardDefaultWeather({ city, i }) {
   return (
     <View>
       <Card>
-        <Text>Location: {name}</Text>
-        <Text>Temperature: {main.temp}</Text>
-        <Text>Description: {weather[0].description}</Text>
-        <Text>Wind speed: {wind.speed}</Text>
         <Image
           source={{
             uri: `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`,
           }}
-          style={{ width: 200, height: 200 }}
+          style={style.image}
         />
+        <View style={style.view}>
+          <Text style={style.text1}>
+            <Text style={{ fontWeight: "bold" }}>Location: </Text>
+            <Text>{name}</Text>
+          </Text>
+          <Text style={style.text2}>
+            <Text style={{ fontWeight: "bold" }}>Temperature: </Text>
+            <Text>{main.temp}</Text>
+          </Text>
+          <Text style={style.text3}>
+            <Text style={{ fontWeight: "bold" }}>Description: </Text>
+            <Text>{weather[0].description}</Text>
+          </Text>
+          <Text style={style.text3}>
+            <Text style={{ fontWeight: "bold" }}>Wind speed: </Text>
+            <Text>{wind.speed}</Text>
+          </Text>
+        </View>
       </Card>
     </View>
   );
 }
 
 const style = StyleSheet.create({
-  card: { marginHorizontal: 0 },
-  image: { width: "100%", height: 400 },
+  image: { width: 40, height: 70, marginBottom: 5 },
+  view: { textAlign: "center" },
+  text1: { marginTop: 10, marginLeft: 10 },
+  text2: { marginTop: 10, marginLeft: 10 },
+  text3: { marginTop: 10, marginLeft: 10 },
+  text4: { marginTop: 10, marginLeft: 10 },
+  textView: { marginTop: 5 },
 });

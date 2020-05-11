@@ -19,7 +19,7 @@ export const getWeatherTokio = async (city = "Tokio", country = "Japan") => {
       `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apikey}&units=metric`
     )
     .then((results) => {
-      console.log("Api", results.data)
+      console.log("Api", results.data);
       return results.data;
     })
     .catch((error) => console.log(error));
@@ -36,10 +36,10 @@ export const getWeatherCairo = async (city = "Cairo", country = "Egypt") => {
     .catch((error) => console.log(error));
 };
 
-export const getWeatherMadrid = async () => {
+export const getWeatherMadrid = async (city = "Madrid", country = "Spain") => {
   return axios
     .get(
-      `https://api.openweathermap.org/data/2.5/weather?q=Madrid,Spain&appid=${apikey}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apikey}&units=metric`
     )
     .then((results) => {
       return results.data;
@@ -47,10 +47,10 @@ export const getWeatherMadrid = async () => {
     .catch((error) => console.log(error));
 };
 
-export const getWeatherLondon = async () => {
+export const getWeatherLondon = async (city = "London", country = "UK") => {
   return axios
     .get(
-      `https://api.openweathermap.org/data/2.5/weather?q=London,UK&appid=${apikey}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apikey}&units=metric`
     )
     .then((results) => {
       return results.data;
